@@ -61,3 +61,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.dwlt
+*.dwlt
+*.log
+*.backup
+The Murder Zone/Temp/UnityLockfile
