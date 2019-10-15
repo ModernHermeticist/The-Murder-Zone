@@ -51,7 +51,7 @@ public class CameraPan : MonoBehaviour
         }
 
         p *= Time.deltaTime;
-        transform.Translate(p);
+        transform.Translate(p, Space.World);
     }
 
     // Returns the basic values, if it's 0 than it's not active.
@@ -61,11 +61,11 @@ public class CameraPan : MonoBehaviour
 
         // Up
         if (Input.GetKey(KeyCode.W))
-            p_Velocity += new Vector3(0, 1, 0);
+            p_Velocity += new Vector3(0, 0, 1);
 
         // Down
         if (Input.GetKey(KeyCode.S))
-            p_Velocity += new Vector3(0, -1, 0);
+            p_Velocity += new Vector3(0, 0, -1);
 
         // Left
         if (Input.GetKey(KeyCode.A))
