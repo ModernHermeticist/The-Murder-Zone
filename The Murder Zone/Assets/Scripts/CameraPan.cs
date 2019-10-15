@@ -57,13 +57,14 @@ public class CameraPan : MonoBehaviour
     // Returns the basic values, if it's 0 than it's not active.
     private Vector3 GetBaseInput()
     {
+        float d = Input.GetAxis("Mouse ScrollWheel");
         Vector3 p_Velocity = new Vector3();
 
-        // Up
+        // Forward
         if (Input.GetKey(KeyCode.W))
             p_Velocity += new Vector3(0, 0, 1);
 
-        // Down
+        // Backward
         if (Input.GetKey(KeyCode.S))
             p_Velocity += new Vector3(0, 0, -1);
 
@@ -75,13 +76,13 @@ public class CameraPan : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             p_Velocity += new Vector3(1, 0, 0);
 
-        // Forward
-        // if (Input.GetKey(KeyCode.Space))
-        //     p_Velocity += new Vector3(0, 0, 1);
+        // Up
+        if (d > 0f)
+            p_Velocity += new Vector3(0, -1, 0);
 
-        //  Backwards
-        // if (Input.GetKey(KeyCode.LeftControl))
-        //     p_Velocity += new Vector3(0, 0, -1);
+        // Down
+        if (d < 0f)
+            p_Velocity += new Vector3(0, 1, 0);
 
         return p_Velocity;
     }
