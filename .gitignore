@@ -66,3 +66,11 @@ crashlytics-build.properties
 *.log
 *.backup
 The Murder Zone/Temp/UnityLockfile
+*.log
+The Murder Zone/Library/metadata/79/793ffd27502d50f4c9bc539912444689
+*.info
+*.dwlt
+The Murder Zone/Temp/UnityTempFile-090b1b9cbe43d9944867e387a28e8885
+*.cache
+*.json
+The Murder Zone/Library/StateCache/Hierarchy/af48bd-mainStage.json
