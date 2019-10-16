@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,8 +9,12 @@ public class Enemy : MonoBehaviour
     private int nodeIndex = 0;
     private int maxIndex = 0;
 
-    [SerializeField]
-    private float health = 4f;
+    public float startHealth = 10f;
+
+    private float health;
+
+
+    public Image healthBar;
 
     public int GetNodeIndex()
     {
@@ -45,6 +50,12 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+
+        healthBar.fillAmount = health / startHealth;
+        Color healthColor = healthBar.color;
+        healthColor.r = 1 / healthBar.fillAmount;
+        healthColor.g = healthBar.fillAmount;
+        healthBar.color = healthColor;
     }
 
     public float GetHealth()
@@ -54,6 +65,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        health = startHealth;
         target = Nodes.nodes[nodeIndex];
         maxIndex = Nodes.nodes.Length;
     }
