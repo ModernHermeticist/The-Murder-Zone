@@ -61,6 +61,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+The Murder Zone/Library/ShaderCache/*.*
+The Murder Zone/Library/StateCache/*.*
+The Murder Zone/Library/metadata/*.*
+The Murder Zone/Temp/*.*
+*.bin
+*.dll
 *.dwlt
 *.dwlt
 *.log
