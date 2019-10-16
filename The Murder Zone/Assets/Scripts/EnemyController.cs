@@ -5,20 +5,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject enemyPreFab;
     List<GameObject> enemies = new List<GameObject>();
-    GameObject lastSpawnedEnemy;
-
-    private int enemiesToSpawn;
-
-    private void Start()
-    {
-        enemiesToSpawn = 20;
-        GameObject enemy = Instantiate(enemyPreFab, transform);
-        lastSpawnedEnemy = enemy;
-        enemies.Add(enemy);
-    }
 
     private void Update()
     {
@@ -38,13 +25,10 @@ public class EnemyController : MonoBehaviour
             enemies.Remove(enemy);
             Destroy(enemy);
         }
+    }
 
-        if (enemiesToSpawn > 0 && lastSpawnedEnemy.GetComponent<Enemy>().GetNodeIndex() > 0)
-        {
-            GameObject newEnemy = Instantiate(enemyPreFab, transform);
-            lastSpawnedEnemy = newEnemy;
-            enemiesToSpawn -= 1;
-            enemies.Add(newEnemy);
-        }
+    public void AddEnemy(GameObject enemy)
+    {
+        enemies.Add(enemy);
     }
 }
