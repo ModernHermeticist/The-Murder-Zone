@@ -35,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
 
         countDown -= Time.deltaTime;
 
-        waveCountDownText.text = Mathf.Floor(countDown).ToString();
+        waveCountDownText.text = "Next wave in: " + Mathf.Floor(countDown).ToString();
     }
 
     IEnumerator SpawnWave()
